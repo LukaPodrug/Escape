@@ -3,8 +3,30 @@
 <htmḷ>
     <head>
         <link rel="stylesheet" href="index.css">
+
         <title>Escape</title>
+
         <link rel="icon" type="image/x-icon" href="./favicon.ico">
+
+        <script type="text/javascript">
+            function submitMessage() {
+                let name = document.getElementById("contactUsFormNameInput").value
+                let email = document.getElementById("contactUsFormEmailInput").value
+                let phone = document.getElementById("contactUsFormPhoneInput").value
+                let message = document.getElementById("contactUsFormMessageInput").value
+
+                if(name != "" && email != "" && phone != "" && message != "") {
+                    if(validateEmail(email)) {
+                        document.getElementById("loadingPage").style.display = "flex"
+                    }
+                }
+            }
+
+            function validateEmail(email) {
+                let regularExpression = /\S+@\S+\.\S+/
+                return regularExpression.test(email)
+            }
+        </script>
     </head>
 
     <body>
@@ -116,34 +138,6 @@
 
                 <div class="service">
                     <div class="serviceLogo">
-                        <img src="./assets/cleaning.png">
-                    </div>
-                                        
-                    <div class="serviceText">
-                        <div class="serviceTextTitle">
-                            Cleaning
-                        </div>
-
-                        <div class="serviceTextContent">
-                            <ul>
-                                <li>
-                                    Lorem ipsum, consectetur adipiscing elit.
-                                </li>
-
-                                <li>
-                                    Lorem ipsum dolor  adipiscing elit.
-                                </li>
-
-                                <li>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem amet sit.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service">
-                    <div class="serviceLogo">
                         <img src="./assets/website.png">
                     </div>
                                         
@@ -216,33 +210,18 @@
                         <input type="hidden" name="_next" value="https://lukapodrug.github.io/Escape/success.html">
 
                         <div class="contactUsFormLabel">NAME</div>
-                        <input class="contactUsFormInput" type="text" name="Name" required>
+                        <input id="contactUsFormNameInput" class="contactUsFormInput" type="text" name="Name" required>
                         <div class="contactUsFormLabel">EMAIL</div>
-                        <input class="contactUsFormInput" type="email" name="E-mail" required>
+                        <input id="contactUsFormEmailInput" class="contactUsFormInput" type="email" name="E-mail" required>
                         <div class="contactUsFormLabel">PHONE</div>
-                        <input class="contactUsFormInput" type="tel" name="Phone" required>
+                        <input id="contactUsFormPhoneInput" class="contactUsFormInput" type="tel" name="Phone" required>
                         <div class="contactUsFormLabel">MESSAGE</div>
-                        <input class="contactUsFormInput" type="text" name="Message" required>
-                        <button class="contactUsFormButton" type="submit">SEND</button>
+                        <input id="contactUsFormMessageInput" class="contactUsFormInput" type="text" name="Message" required>
+                        <button class="contactUsFormButton" type="submit" onclick="submitMessage()">SEND</button>
                     </form>
                 </div>
 
                 <div class="contactUsInfo">
-                    <div class="contactUsInfoSection">
-                        <div class="contactUsInfoSectionImage">
-                            <img src="./assets/location.png">
-                        </div>
-
-                        <div class="contactUsInfoSectionText">
-                            <p>
-                                Address
-                            </p>
-                            <p>
-                                Branimirova 16, 21000 Split
-                            </p>
-                        </div>
-                    </div>
-
                     <div class="contactUsInfoSection">
                         <div class="contactUsInfoSectionImage">
                             <img src="./assets/email.png">
@@ -270,9 +249,6 @@
                             <p>
                                 +365995430964
                             </p>
-                            <p>
-                                +365985289467
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -280,6 +256,11 @@
 
             <div class="footer">
                 Escape, 2023
+            </div>
+
+            <div id="loadingPage" class="loadingPage">
+                <div class="loadingText">Your message is being submitted, please wait</div>
+                <img src="./assets/spinner.gif">
             </div>
         </div>
     </body> 
