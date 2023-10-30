@@ -98,3 +98,7 @@ button {
     color: #1f1f1f;
     background-color: #ffffff;
 }
+
+@media only screen and (max-width: 300px) {
+
+}

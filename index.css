@@ -48,14 +48,14 @@ button {
     text-align: center;
     color: #e0dac0;
 
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .aboutUs {
     width: 90%;
 
     margin: 0 auto;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 
     border-top-left-radius: 25px;
     border-bottom-right-radius: 25px;
@@ -74,8 +74,18 @@ button {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+}
+
+.aboutUsTextIntro {
+    margin-bottom: 20px;
+}
+
+.aboutUsTextContent {
+
+}
+
+.aboutUsTextContent ul li {
+    margin-bottom: 10px;
 }
 
 .aboutUsGallery {
@@ -175,7 +185,7 @@ button {
     flex-direction: row;
     justify-content: space-evenly;
 
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .service {
@@ -183,7 +193,7 @@ button {
     height: calc(100vw * 0.15);
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     background-color: #e0dac0;
 
@@ -196,10 +206,6 @@ button {
 
     border-top-left-radius: 25px;
     border-bottom-right-radius: 25px;
-}
-
-.service:hover {
-    width: calc(100vw * 0.30);
 }
 
 .serviceLogo {
@@ -216,30 +222,15 @@ button {
     height: 50%;
 }
 
-.serviceText {
-    width: 100%;
-    aspect-ratio: 1/1;
-
-    background-color: #4c4c44;
-
-    padding: 10px;
-
+.serviceTitle {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
 
-    color: #e0dac0;
-}
-
-.serviceTextTitle {
-    font-family: 'Montserrat', sans-serif;
-
-    margin-bottom: 5px;
-}
-
-.serviceTextContent {
     font-family: 'Ubuntu', sans-serif;
+    color: #1f1f1f;
+
+    margin-bottom: 20px;
 }
 
 .contactUs {
@@ -392,4 +383,8 @@ button {
     color: #e0dac0;
 
     margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 300px) {
+
 }
